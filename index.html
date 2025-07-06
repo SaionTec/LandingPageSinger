@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saiô Ferreira - Cantora Multi-instrumentista</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fff, #f0f0f0);
+      color: #333;
+    }
+
+    header {
+      background-color: #2d2d2d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      padding: 40px 20px;
+      background: url("saiobanner.jpg") no-repeat center/cover;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h2 {
+      font-size: 2em;
+    }
+
+    .bio {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .bio h2 {
+      color: #cc0066;
+      margin-bottom: 10px;
+    }
+
+    .bio p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .instrumentos {
+      background-color: #fef6f9;
+      padding: 30px 20px;
+    }
+
+    .instrumentos h3 {
+      color: #cc0066;
+      text-align: center;
+    }
+
+    .lista-instrumentos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .item {
+      background-color: #fff;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+      background-color: #ffe6f0;
+    }
+
+    .discografia {
+      padding: 40px 20px;
+      background-color: #f0f0f0;
+    }
+
+    .discografia h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .albums {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .album {
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      width: 200px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .album img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .album h4 {
+      margin: 10px 0 5px;
+    }
+
+    .album-links {
+      margin-top: 10px;
+    }
+
+    .album-links a {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      background-color: #cc0066;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: background 0.3s;
+    }
+
+    .album-links a:hover {
+      background-color: #a8004d;
+    }
+
+    .btn-bio {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #cc0066;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-bio:hover {
+      background-color: #a8004d;
+    }
+
+    footer {
+      background-color: #2d2d2d;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    .video {
+  padding: 40px 20px;
+  background-color: #fff5f9;
+  text-align: center;
+}
+
+.video h3 {
+  color: #cc0066;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
+.videos {
+  background-color: #fff5f9;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.videos h3 {
+  color: #cc0066;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.video-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #cc0066;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.video-item:hover {
+  transform: scale(1.03);
+  background-color: #ffe6f0;
+}
+
+.video-item img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.video-item span {
+  font-weight: bold;
+}
+
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .album {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Saiô Ferreira</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#bio">Biografia</a>
+      <a href="#discografia">Discografia</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>A alma de todos os sons</h2>
+      <p>Saiô Ferreira é cantora, compositora e multi-instrumentista brasileira. Sua arte mistura Sanfona, violão popular e ritmos populares com letras poéticas e marcantes.</p>
+      <button class="btn-bio" onclick="mostrarBiografia()">Ver Biografia Completa</button>
+    </div>
+  </section>
+
+  <section class="bio" id="bio">
+    <h2>Biografia</h2>
+    <p><strong>Saiô Ferreira</strong> nasceu em Patos na Paraíba... (biografia completa)</p>
+    <p><strong>Saiô Ferreira</strong> nasceu em Patos na Paraíba e desde pequena se encantava com os sons do clube de Choro que ensaiavam na sua casa. Aos 6 anos, começou a tocar violão e cantar e aos 12, compôs sua primeira canção. Estudou na escola de música Assis Casca de Bala na sede da Filarmônica 26 de Julho, onde fez parte por 5 anos como clarinetista, já se apresentou em mais de 30 cidades em 4 estados do país, explorando sonoridades de todos os estilos musicais que ela domina.</p>
+
+    <p>Além de cantar, Saiô domina diversos instrumentos, compondo arranjos completos para seus álbuns. Seu trabalho é marcado pela fusão de elementos acústicos com eletrônicos, sempre com forte carga emocional e identidade própria.</p>
+  </section>
+
+  <section class="instrumentos">
+    <h3>Instrumentos Dominados</h3>
+    <div class="lista-instrumentos">
+      <div class="item" onclick="alert('Violão: seu primeiro amor musical.')">🎹 Violão</div>
+      <div class="item" onclick="alert('Sanfona: base harmônica de suas composições.')">🎸 Sanfona</div>
+      <div class="item" onclick="alert('Flauta transversal: para arranjos.')">🎶 Flauta</div>
+      <div class="item" onclick="alert('Bateria: elemento rítmico nas performances ao vivo.')">🥁 Bateria</div>
+      <div class="item" onclick="alert('Cavaquinho: usado em faixas leves e tropicais.')">🌴 Cavaquinho</div>
+    </div>
+  </section>
+  <section class="video">
+    <h3>Assista um pouco do trabalho de Saiô</h3>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/xVvHcRXuKK4?si=41AeyQNOhZEC3XQH" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="videos">
+    <h3>Veja mais do trabalho de Saiô Ferreira</h3>
+    <div class="video-links">
+        
+      <a href="https://www.instagram.com/reel/DKP0YtMOfly/?igsh=MWpxcmhoYnY1OTI2OQ==" target="_blank" class="video-item">
+        <img src="https://img.youtube.com/vi/xVvHcRXuKK4/hqdefault.jpg" alt="Saiô Ferreira - Vídeo no Instagram">
+        <span>Assista no Instagram</span>
+      </a>
+      
+      <a href="https://youtu.be/aq3fpf7KDSk?si=hdI6tjk5_OTjDcvn" target="_blank" class="video-item">
+        <img src="https://via.placeholder.com/320x180?text=Vídeo+no+Vimeo" alt="Vídeo no Vimeo">
+        <span>Assista no Vimeo</span>
+      </a>
+      
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  <section class="discografia" id="discografia">
+    <h3>Discografia</h3>
+    <div class="albums">
+      <div class="album">
+        <img src="clarice.jpg" alt="Capa do álbum Raízes">
+        <h4>Clarice e a Andorinha</h4>
+        <p>(2019)</p>
+        <div class="album-links">
+          <a href="https://youtu.be/z6Z7bkQywzk?si=uhWdP3Bp1f8yWkLj" target="_blank">YouTube</a>
+          <a href="https://open.spotify.com/track/5Io7f2tWWPefQylVMfxQZi?si=rd9n1ABKR_-2aPrCgQUaEA" target="_blank">Spotify</a>
+        </div>
+      </div>
+      <div class="album">
+        <img src="trevo.jpg" alt="Capa do álbum Maré">
+        <h4>Trevo</h4>
+        <p>(2020)</p>
+        <div class="album-links">
+          <a href="https://youtu.be/-vRCog3jHmA?si=twz_cKBcIcqqL5HM" target="_blank">YouTube</a>
+          <a href="https://spotify.com" target="_blank">Spotify</a>
+        </div>
+      </div>
+      <div class="album">
+        <img src="recife.jpg" alt="Capa do álbum Universo">
+        <h4>Só elas</h4>
+        <p>(2025)</p>
+        <div class="album-links">
+          <a href="https://www.instagram.com/reel/DKP0YtMOfly/?igsh=MWpxcmhoYnY1OTI2OQ%3D%3D" target="_blank">YouTube</a>
+          <a href="https://youtu.be/HHqWcoeEWlM?si=-1668Gpk0VhO2oHw" target="_blank">Spotify</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Saiô Ferreira. Todos os direitos reservados. | Siga: 
+    <a href="#" style="color: #ffcc00;">Instagram</a> | 
+    <a href="#" style="color: #ffcc00;">Spotify</a> | 
+    <a href="#" style="color: #ffcc00;">YouTube</a>
+  </footer>
+
+  <script>
+    function mostrarBiografia() {
+      document.getElementById("bio").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+
+</body>
+</html>
